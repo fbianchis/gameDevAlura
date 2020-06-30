@@ -7,6 +7,7 @@ class Personagem extends Animacao {
     this.y = this.yBase;
     this.alturaPulo = -45;
     this.contadorPulos = 0;
+    this.invencivel = false;
   }
   pula(somPulo) {
     if(this.contadorPulos < 1) {
@@ -26,7 +27,17 @@ class Personagem extends Animacao {
       this.contadorPulos = 0;
     }
   }
+
+  ficaInvencivel() {
+    this.invencivel = true;
+    setTimeout(() => {
+      this.invencivel = false;
+    }, 1000);
+  }
   estaColidindo(Inimigo) {
+    if(this.invencivel) {
+      return false;
+    }
     const precisao = 0.7;
     noFill();
     rect(this.x, 

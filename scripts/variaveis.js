@@ -8,6 +8,11 @@ let imagemTelaInicial;
 
 let fonteTelaInicial;
 
+let imagemCoracao;
+let vida;
+
+let fita; 
+
 let cenario; 
 let trilhaSonora;
 let personagem;
